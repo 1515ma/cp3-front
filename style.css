@@ -459,4 +459,80 @@ button:hover {
     .form-container, .card-preview {
         margin: 0 20px;
     }
+}  .container {
+    padding: 60px;
+    gap: 60px;
+  }
+
+  .form-container,
+  .card-preview {
+    margin: 0 20px;
+  }
+}
+
+.footer {
+  background-color: #6d86dd;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer__content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  text-align: left;
+  margin: 0;
+  color: white;
+  line-height: 1;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.footer__block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__block p {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: white;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .footer__info {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .footer__block {
+    min-width: 45%;
+    align-items: center;
+  }
+
+  .footer-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .footer__block p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    text-align: center;
+  }
 }
