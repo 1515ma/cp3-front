@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Pokemom</title>
+</head>
+
+<body>
+    <header>
+        <div class="title__header">
+            <h1>CP 3</h1>
+        </div>
+        <div class="nav__header">
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Integrantes</a></li>
+                    <li><a href="#">Pokemons</a></li>
+                    <li><a href="#">Cartas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner__home">
+        <div class="balao">
+            <h2>Checkpoint <br /> Project </h2>
+        </div>
+        <button>Start</button>
+
+    </section>
+    <section class="section__character">
+        <h2>Choose your character</h2>
+        <div class="names">
+            <p class="um"><i class="fa-solid fa-arrow-right"></i> Marcos - RM559809</p>
+            <p class="um"> <i class="fa-solid fa-arrow-right"></i> Marcos - RM559809</p>
+            <p class="um"><i class="fa-solid fa-arrow-right"></i> Marcos - RM559809</p>
+        </div>
+
+    </section>
+    <section class="pokemons">
+        <div class="pokemons__filtro">
+            <h2>Descubras os pokemons</h2>
+            <button class="um" onclick="buscarTodos('')"><i class="fa-solid fa-arrow-right"></i>Todos</button>
+            <button class="um" onclick="buscarPorTipo('water')"><i class="fa-solid fa-arrow-right"></i>Água</button>
+            <button class="um" onclick="buscarPorTipo('fire')"><i class="fa-solid fa-arrow-right"></i>Fogo</button>
+            <button class="um" onclick="buscarPorTipo('poison')"><i class="fa-solid fa-arrow-right"></i>Poison</button>
+            <button class="um" onclick="buscarPorTipo('dark')"><i class="fa-solid fa-arrow-right"></i>Dark</button>
+            <button class="um" onclick="buscarPorTipo('rock')"><i class="fa-solid fa-arrow-right"></i>Rock</button>
+        </div>
+        <div class="div__lista">
+            <ul id="lista-pokemons"></ul>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                  <span id="fechar-modal" class="fechar">&times;</span>
+                  <div id="info-pokemon">
+                    <div id="name__pokemon"></div>
+                    <div id="info_poke"></div>
+                    <div id="evolução">
+                        <div id="evolução__name"></div>
+                        <div id="evolução__img"></div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1>Crie sua própria carta especial</h1>
+        
+        <div class="form-container">
+          <div class="form-group">
+            <label for="card-name">Nome da carta:</label>
+            <input type="text" id="card-name" placeholder="Digite o nome da carta">
+          </div>
+          
+          <div class="form-group">
+            <label for="card-hp">Quantidade de vida:</label>
+            <input type="number" id="card-hp" placeholder="HP" min="0" max="300">
+          </div>
+          
+          <div class="form-group">
+            <label for="card-pokemon">Pokemon:</label>
+            <select id="card-pokemon">
+              <option value="">Selecione o pokemon</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="card-category">Categoria:</label>
+            <select id="card-category">
+              <option value="">Selecione a categoria</option>
+              <option value="Básico">Básico</option>
+              <option value="Estágio 1">Estágio 1</option>
+              <option value="Estágio 2">Estágio 2</option>
+              <option value="Lendário">Lendário</option>
+              <option value="Mega">Mega</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="card-attack">Ataque:</label>
+            <input type="number" id="card-attack" placeholder="Valor do ataque" min="0" max="250">
+          </div>
+          
+          <div class="form-group">
+            <label for="card-resistance">Resistência:</label>
+            <input type="number" id="card-resistance" placeholder="Valor de resistência" min="0" max="250">
+          </div>
+          
+          <button id="create-card">Criar Carta</button>
+        </div>
+        
+        <div class="card-preview">
+          <div class="card-background"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <div class="card-name">Nome da Carta</div>
+              <div class="card-hp">HP: 100</div>
+            </div>
+            
+            <div class="card-image-container">
+              <img id="pokemon-image" class="card-image" src="/api/placeholder/250/180" alt="Pokemon">
+            </div>
+            
+            <div class="card-info">
+              <div class="card-attack">
+                <span>Ataque:</span>
+                <span id="attack-value">50</span>
+              </div>
+              <div class="card-resistance">
+                <span>Resistência:</span>
+                <span id="resistance-value">30</span>
+              </div>
+            </div>
+            
+            <div class="card-category">Básico</div>
+          </div>
+        </div>
+      </section>
+</body>
+<script src="./javascript.js"></script>
+
+</html>

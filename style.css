@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Noto Serif", serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    background-color: #FBF6F3;
+    padding: 15px 25px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    flex-wrap: wrap;
+}
+
+.title__header {
+    font-size: clamp(1.8rem, 4vw, 3.1rem);
+    margin: 10px 0;
+}
+
+.nav__header nav ul {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1.3rem);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav__header nav ul li {
+    margin: 5px 0;
+}
+
+.banner__home {
+    min-height: 800px;
+    height: auto;
+    padding: 50px 20px;
+    background-image: url(./imgs/banner-full.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #6D86DD;
+}
+
+.banner__home .balao {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-image: url(./imgs/balao.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 180px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.banner__home .balao h2 {
+    font-size: clamp(1.8rem, 5vw, 3.1rem);
+    margin-top: 6px;
+}
+
+.banner__home button {
+    background-color: #FBF6F3;
+    width: 80%;
+    max-width: 200px;
+    height: 35px;
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    border: 2px solid black;
+    box-shadow: inset 0px 0px 6px rgb(74, 74, 74);
+}
+
+.section__character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    flex-direction: column;
+    padding: 30px 15px;
+    height: 400px;
+    gap: 30px;
+}
+
+.section__character h2 {
+    color: #FBF6F3;
+    font-size: clamp(1.8rem, 6vw, 3.3rem);
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+}
+
+.section__character .names {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    width: 90%;
+    max-width: 300px;
+    gap: 10px;
+    border: 4px solid black;
+}
+
+i {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.um:hover {
+    cursor: pointer;
+}
+
+.um:hover i {
+    opacity: 1;
+}
+
+.pokemons {
+    display: flex;
+    padding: 25px 15px;
+    background-color: #6D86DD;
+    color: white;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .pokemons {
+        flex-direction: row;
+    }
+}
+
+.pokemons__filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .pokemons__filtro {
+        width: 50%;
+        margin-bottom: 0;
+    }
+}
+
+.pokemons__filtro h2 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pokemons__filtro button {
+    display: flex;
+    gap: 15px;
+    width: 80%;
+    max-width: 200px;
+    text-align: left;
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    color: #FBF6F3;
+    padding: 5px;
+}
+
+.div__lista {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .div__lista {
+        width: 50%;
+    }
+}
+
+#lista-pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#lista-pokemons li {
+    margin: 5px;
+}
+
+.modal {
+    color: black;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    background: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    min-height: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#info-pokemon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#name__pokemon {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-weight: bold;
+    text-align: center;
+}
+
+#info_poke {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+@media (min-width: 480px) {
+    #info_poke {
+        flex-direction: row;
+        gap: 25px;
+        margin-top: 50px;
+    }
+}
+
+#evolução {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    align-items: center;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.fechar {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: bisque;
+}
+
+.container h1 {
+    text-align: center;
+    color: #FBF6F3;
+    font-size: clamp(1.8rem, 6vw, 3.3rem);
+    -webkit-text-stroke: 1px black;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: #FBF6F3;
+    padding: 20px;
+    border: 4px solid black;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#create-card {
+    background-color: #6D86DD;
+    color: white;
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: inset 0px 0px 6px rgb(74, 74, 74);
+}
+
+button:hover {
+    background-color: #5264a9;
+}
+
+.card-preview {
+    width: 100%;
+    max-width: 300px;
+    height: 420px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #FFD966;
+    border: 8px solid #C9B038;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-name {
+    font-weight: bold;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-hp {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: white;
+    border: 3px solid #C9B038;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.card-info {
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+.card-attack, .card-resistance {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-category {
+    font-style: italic;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+    
+    .title__header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .nav__header {
+        width: 100%;
+    }
+    
+    .nav__header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section__character .names {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 15px 10px;
+    }
+    
+    .modal-content {
+        padding: 15px;
+        margin: 15% auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 60px;
+        gap: 60px;
+    }
+    
+    .form-container, .card-preview {
+        margin: 0 20px;
+    }
+}
