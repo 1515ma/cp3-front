@@ -4,9 +4,10 @@ h1,h2,h3{
     font-family: "Press Start 2P";
 }
 body {
+    overflow-x: hidden;
     font-family: "Noto Serif", serif;
     max-width: 100%;
-    overflow-x: hidden;
+    
 }
 
 header {
@@ -69,15 +70,10 @@ header {
     margin-top: -60px;
     font-size: clamp(1.8rem, 5vw, 3.1rem);
 }
-.banner__home .balao button {
-   
-}
 
-.banner__home button {
-    
+.botao__home {
     background-color: #FBF6F3;
-    width: 80%;
-    max-width: 200px;
+    width: 200px;
     height: 50px;
     font-size: clamp(1rem, 4vw, 1.6rem);
     border: 2px solid black;
@@ -447,6 +443,11 @@ button:hover {
         width: 400px;
         height: 300px;
     }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -462,6 +463,11 @@ button:hover {
         padding: 15px;
         margin: 15% auto;
     }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+
      
 }
 
@@ -483,7 +489,13 @@ button:hover {
   .card-preview {
     margin: 0 20px;
   }
-
+.banner__footer{
+    height: 500px;
+    background-image: url(./imgs/img-footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .footer {
   background-color: #6d86dd;
   color: white;
@@ -502,10 +514,12 @@ button:hover {
 }
 
 .footer-title {
-  font-size: clamp(2rem, 6vw, 2.6rem);
+  letter-spacing: -2px;
+  color: #FBF6F3;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  -webkit-text-stroke: 2px black;
   text-align: left;
   margin: 0;
-  color: white;
   line-height: 1;
 }
 
