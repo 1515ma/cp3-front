@@ -7,7 +7,6 @@ body {
     overflow-x: hidden;
     font-family: "Noto Serif", serif;
     max-width: 100%;
-    
 }
 
 header {
@@ -468,7 +467,6 @@ button:hover {
         flex-direction: column;
     }
 
-     
 }
 
 @media (min-width: 1200px) {
@@ -499,7 +497,7 @@ button:hover {
 .footer {
   background-color: #6d86dd;
   color: white;
-  padding: 40px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: center;
   width: 100%;
